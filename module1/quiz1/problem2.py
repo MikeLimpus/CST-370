@@ -7,6 +7,6 @@ def do_what(a):
         v1 = v1 + a[i]
         i = i + 1
     v2 = v1 / len(foo) 
-    return v2
+    return v2 
 
 print(do_what(foo))
