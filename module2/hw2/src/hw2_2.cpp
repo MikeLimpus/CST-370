@@ -34,7 +34,6 @@ int main() {
     
     for (int i = 0; i < count_subsets; ++i) {
         string bin = dec_to_bin(i, bin_dig);
-        //cout << bin;
         string subset = find_subset(bin, set);
         cout << i << ":" << bin << ":" << subset << endl;
     }
@@ -66,16 +65,14 @@ string dec_to_bin(int dec, int bin_dig) {
             dec /= 2;
             ++i;
         }
+
         reverse(bin_ints, bin_ints+bin_dig);
+
         for (int j = 0; j < bin_dig; ++j) {
             bin.append(to_string(bin_ints[j]));
         }
-/*         for (int j = i - 1; j >= 0; j--) {
-            bin.append(to_string(bin_ints[j]));
-        } */
         return bin;        
     }
-    
 }
 
 string find_subset(string bin, string set[]) {
@@ -84,7 +81,6 @@ string find_subset(string bin, string set[]) {
     for (int i = 0; i < bin.length(); ++i) {
         if(bin.at(i) == '1') {
             subset.append(set[i]);
-            //if (i != bin.length() - 1)
             subset.append(" ");
             not_zero = true;
         }
